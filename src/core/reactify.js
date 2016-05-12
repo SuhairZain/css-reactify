@@ -5,19 +5,17 @@
 import camelCase from 'camelcase';
 import {parse} from 'css';
 
-const reactifyProperty = function(property){
-    return {
-        [camelCase(property.property)]: property.value
-    }
-};
-
 export const reactify = function(object){
     const out = [];
 
     parse(object).stylesheet.rules.map(function(rule){
+        const cls = {};
+
         rule.declarations.map(function (declaration) {
-            out.push(reactifyProperty(declaration));
-        })
+            cls[camelCase(declaration.property)] = declaration.value;
+        });
+
+        out.push(cls);
     });
 
     return out;

@@ -4,10 +4,21 @@
 
 import React, {Component} from 'react';
 
+import InputCard from './InputCard.jsx';
+
 class App extends React.Component {
+    styles = {
+        root: {
+            display: 'flex'
+        }
+    };
+
     render() {
         return (
-            <div>Hello</div>
+            <div style={this.styles.root}>
+                <InputCard/>
+                <InputCard/>
+            </div>
         );
     }
 }

@@ -4,8 +4,12 @@
 
 import React, {Component} from 'react';
 
+import {parse} from 'css';
+
 import Card from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
+
+import {reactify} from './core/reactify';
 
 class InputCard extends React.Component {
     styles = {
@@ -20,6 +24,7 @@ class InputCard extends React.Component {
     };
 
     handleChange = (event) => {
+        console.log(reactify(parse(event.target.value)));
     };
 
     render() {

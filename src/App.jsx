@@ -22,7 +22,18 @@ class App extends React.Component {
 
     styles = {
         root: {
+            display: 'flex',
+            flexDirection: 'column'
+        },
+        cards: {
             display: 'flex'
+        },
+        title: {
+            color: '#fff',
+            fontSize: '3em',
+            fontWeight: 100,
+            textAlign: 'center',
+            width: '100%'
         }
     };
 
@@ -36,8 +47,11 @@ class App extends React.Component {
     render() {
         return (
             <div style={this.styles.root}>
-                <InputCard onChange={this.handleChange} text={this.state.input}/>
-                <InputCard text={this.state.output}/>
+                <p style={this.styles.title}>Convert from Vanilla CSS to React Inline styles</p>
+                <div style={this.styles.cards}>
+                    <InputCard onChange={this.handleChange} text={this.state.input}/>
+                    <InputCard text={this.state.output}/>
+                </div>
             </div>
         );
     }

@@ -9,7 +9,6 @@ export const reactify = function(object){
     const out = {};
 
     parse(object).stylesheet.rules.map(function(rule){
-        console.log(rule);
         const cls = {};
 
         rule.declarations.map(function (declaration) {

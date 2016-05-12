@@ -6,6 +6,8 @@ import React, {Component} from 'react';
 
 import InputCard from './InputCard.jsx';
 
+import {reactify} from './core/reactify';
+
 class App extends React.Component {
     styles = {
         root: {
@@ -13,10 +15,14 @@ class App extends React.Component {
         }
     };
 
+    handleChange = (event) => {
+        console.log(reactify(event.target.value));
+    };
+
     render() {
         return (
             <div style={this.styles.root}>
-                <InputCard/>
+                <InputCard onChange={this.handleChange}/>
                 <InputCard/>
             </div>
         );

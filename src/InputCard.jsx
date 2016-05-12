@@ -4,12 +4,8 @@
 
 import React, {Component} from 'react';
 
-import {parse} from 'css';
-
 import Card from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
-
-import {reactify} from './core/reactify';
 
 class InputCard extends React.Component {
     styles = {
@@ -23,10 +19,6 @@ class InputCard extends React.Component {
         }
     };
 
-    handleChange = (event) => {
-        console.log(reactify(parse(event.target.value)));
-    };
-
     render() {
         return (
             <Card style={this.styles.card}>
@@ -34,7 +26,7 @@ class InputCard extends React.Component {
                     style={this.styles.field}
                     hintText="MultiLine with rows: 2 and rowsMax: 4"
                     multiLine={true}
-                    onChange={this.handleChange}
+                    onChange={this.props.onChange}
                     rows={2}/>
             </Card>
         );

@@ -49,8 +49,8 @@ class App extends React.Component {
             <div style={this.styles.root}>
                 <p style={this.styles.title}>Convert from Vanilla CSS to React Inline styles</p>
                 <div style={this.styles.cards}>
-                    <InputCard onChange={this.handleChange} text={this.state.input}/>
-                    <InputCard text={this.state.output}/>
+                    <InputCard onChange={this.handleChange} text={this.state.input} hint="Vanilla css"/>
+                    <InputCard text={this.state.output} hint="React inline styles"/>
                 </div>
             </div>
         );

@@ -30,7 +30,7 @@ class InputCard extends React.Component {
                     <TextField
                         value={this.props.text}
                         style={this.styles.field}
-                        hintText="MultiLine with rows: 3 and rowsMax: 4"
+                        hintText={this.props.hint}
                         multiLine={true}
                         fullWidth={true}
                         rows={8}

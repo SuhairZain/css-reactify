@@ -23,10 +23,12 @@ class App extends React.Component {
     styles = {
         root: {
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            height: '100%'
         },
         cards: {
-            display: 'flex'
+            display: 'flex',
+            flexGrow: 1
         },
         title: {
             color: '#fff',
@@ -34,6 +36,10 @@ class App extends React.Component {
             fontWeight: 100,
             textAlign: 'center',
             width: '100%'
+        },
+        footer: {
+            color: '#fff',
+            textAlign: 'center'
         }
     };
 
@@ -51,6 +57,10 @@ class App extends React.Component {
                 <div style={this.styles.cards}>
                     <InputCard onChange={this.handleChange} text={this.state.input} hint="Vanilla css"/>
                     <InputCard text={this.state.output} hint="React inline styles"/>
+                </div>
+                <div style={this.styles.footer}>
+                    Created by <a href="https://suhairzain.me">Suhair Zain</a>.
+                    Hosted at and Source code available at <a href="https://github.com/SuhairZain/css-reactify">GitHub</a>
                 </div>
             </div>
         );

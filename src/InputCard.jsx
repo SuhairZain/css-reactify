@@ -10,9 +10,9 @@ import TextField from 'material-ui/TextField';
 class InputCard extends React.Component {
     styles = {
         root: {
-            marginLeft: '4px',
+            marginLeft: '8px',
             marginRight: '4px',
-            width: '50%'
+            width: 'calc(50% - 16px)'
         },
         field: {
             padding: '0 4px'
